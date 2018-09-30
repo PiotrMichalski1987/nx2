@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8cf71ae7849e402090bd0e7561835c77" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="prg_dataModel.Client" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="prg_dataModel.ClientData" Width="1.5" PointX="3" PointY="3.375" />
+        <EntityTypeShape EntityType="prg_dataModel.Costing" Width="1.5" PointX="3" PointY="22" />
+        <EntityTypeShape EntityType="prg_dataModel.Driver" Width="1.5" PointX="3.75" PointY="15.875" />
+        <EntityTypeShape EntityType="prg_dataModel.DRV_Duty" Width="1.5" PointX="6" PointY="11.25" />
+        <EntityTypeShape EntityType="prg_dataModel.MAN_Data" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="prg_dataModel.Utilisation_Data" Width="1.5" PointX="3" PointY="6.375" />
+        <EntityTypeShape EntityType="prg_dataModel.Vehicle" Width="1.5" PointX="0.75" PointY="12.125" />
+        <EntityTypeShape EntityType="prg_dataModel.VTRN_Data" Width="1.5" PointX="3" PointY="29.375" />
+        <AssociationConnector Association="prg_dataModel.FK_ClientData_Client__Client" />
+        <AssociationConnector Association="prg_dataModel.FK_Utilisation_Data_Client__Client_" />
+        <AssociationConnector Association="prg_dataModel.FK__Costing_Veh__FROM__Vehicle_Id" />
+        <AssociationConnector Association="prg_dataModel.FK_DRV_Drv__FROM__Drivers_Id" />
+        <AssociationConnector Association="prg_dataModel.FK_MAN_Data_Drv__FROM_Driver_Id" />
+        <AssociationConnector Association="prg_dataModel.FK_DRV_Duty_Veh" />
+        <AssociationConnector Association="prg_dataModel.FK_MAN_Data_Veh__FROM__Vehicle_Id" />
+        <AssociationConnector Association="prg_dataModel.FK_Utilisation_Data_Veh__Vehicle" />
+        <AssociationConnector Association="prg_dataModel.FK_VTRN_Data_Veh__FROM__Vehicle_Id" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
