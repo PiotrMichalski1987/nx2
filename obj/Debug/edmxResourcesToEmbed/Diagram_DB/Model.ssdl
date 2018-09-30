@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="prg_dataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ClientData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Client" Type="int" />
+    <Property Name="ProfitLoss" Type="float" />
+    <Property Name="TotalCosts" Type="float" />
+  </EntityType>
+  <EntityType Name="Costing">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Veh" Type="int" />
+    <Property Name="Total_Distance" Type="float" />
+    <Property Name="Total_Fuel_Used" Type="float" />
+    <Property Name="Average_Consumption_Lper100Km" Type="float" />
+    <Property Name="Average_Consumption_MPG" Type="float" />
+    <Property Name="Total_Cost_of_running" Type="float" />
+    <Property Name="Diesel_Cost_per_l" Type="float" />
+    <Property Name="Target_Consumption" Type="float" />
+    <Property Name="AddBlue_Percentage_Per_L" Type="float" />
+    <Property Name="AddBlue_Cost_Per_L" Type="float" />
+    <Property Name="Approximate_Adblue_L" Type="float" />
+    <Property Name="Approximate_Addblue_Cost" Type="float" />
+    <Property Name="Current_Consumption" Type="float" />
+    <Property Name="At_Average_Consumption" Type="float" />
+    <Property Name="At_Best_Consumption" Type="float" />
+    <Property Name="At_Target_Consumption" Type="float" />
+    <Property Name="Diff_AtAv_Total_Fuel_Used_Diff_L" Type="float" />
+    <Property Name="Diff_AtAv_Total_Fuel_Cosy" Type="float" />
+    <Property Name="Diff_AtAv_Fuel_Savings" Type="float" />
+    <Property Name="Diff_AtBst_Total_Fuel_Used_Diff_L" Type="float" />
+    <Property Name="Diff_AtBst_Total_Fuel_Cost" Type="float" />
+    <Property Name="Diff_AtBst_Fuel_Savings" Type="float" />
+    <Property Name="Diff_AtTrgt_Total_Fuel_Used_Diff_L" Type="float" />
+    <Property Name="Diff_AtTrgt_Total_FuelCost" Type="float" />
+    <Property Name="Diff_AtTrgt_Fuel_Savings" Type="float" />
+    <Property Name="Date" Type="date" />
+    <Property Name="VehCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Drivers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_Number" Type="int" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Second_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surename" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type_Of_Employment" Type="nchar" MaxLength="10" />
+    <Property Name="Overtime_Rate" Type="float" />
+    <Property Name="Standard_Rate" Type="float" />
+    <Property Name="drv_card" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DRV_Duty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Veh" Type="int" />
+    <Property Name="Drv" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Duty_Start" Type="time" Precision="7" />
+    <Property Name="Duty_End" Type="time" Precision="7" />
+    <Property Name="Duty_Time" Type="time" Precision="7" />
+    <Property Name="Total_Km" Type="float" />
+    <Property Name="MPG" Type="float" />
+    <Property Name="Co2_Kg" Type="float" />
+    <Property Name="VehCode" Type="nchar" MaxLength="10" />
+    <Property Name="DrvName" Type="varchar" MaxLength="50" />
+    <Property Name="_drivers_Standard_Rate" Type="float" />
+    <Property Name="_drivers_Overtime_Rate" Type="float" />
+    <Property Name="_drivers_Employment_Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MAN_Data">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Veh" Type="int" />
+    <Property Name="Drv" Type="int" />
+    <Property Name="Manifest_Number" Type="int" />
+    <Property Name="Revenue" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Total_Jobs" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Utilisation_Data">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Man_Date_Drv" Type="date" />
+    <Property Name="Man_Number" Type="int" />
+    <Property Name="Man_Total_Packs" Type="int" />
+    <Property Name="Man_Total_Jobs" Type="int" />
+    <Property Name="Man_Veh_Code" Type="nchar" MaxLength="10" />
+    <Property Name="Bkg_Number" Type="int" />
+    <Property Name="Bkg_Customer_Code" Type="nchar" MaxLength="10" />
+    <Property Name="Bkg_Cons_Packs" Type="int" />
+    <Property Name="Bkg_Cons_Weight" Type="int" />
+    <Property Name="Bkg_Cons_Price" Type="float" />
+    <Property Name="Man_Total_Revenue" Type="float" />
+    <Property Name="Veh" Type="int" />
+    <Property Name="Client" Type="int" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nchar" MaxLength="10" />
+    <Property Name="Type" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="VTRN_Data">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Veh" Type="int" />
+    <Property Name="Vtrn_Monies" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Vtrn_Date_Driver" Type="date" />
+    <Property Name="Vtrn_Veh_Code" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__Costing_Veh__FROM__Vehicle_Id">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="Costing" Type="Self.Costing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Costing">
+        <PropertyRef Name="Veh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientData_Client__Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="ClientData" Type="Self.ClientData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientData">
+        <PropertyRef Name="Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DRV_Drv__FROM__Drivers_Id">
+    <End Role="Drivers" Type="Self.Drivers" Multiplicity="0..1" />
+    <End Role="DRV_Duty" Type="Self.DRV_Duty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drivers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DRV_Duty">
+        <PropertyRef Name="Drv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DRV_Duty_Veh">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="DRV_Duty" Type="Self.DRV_Duty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DRV_Duty">
+        <PropertyRef Name="Veh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAN_Data_Drv__FROM_Driver_Id">
+    <End Role="Drivers" Type="Self.Drivers" Multiplicity="0..1" />
+    <End Role="MAN_Data" Type="Self.MAN_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drivers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MAN_Data">
+        <PropertyRef Name="Drv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAN_Data_Veh__FROM__Vehicle_Id">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="MAN_Data" Type="Self.MAN_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MAN_Data">
+        <PropertyRef Name="Veh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Utilisation_Data_Client__Client ">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Utilisation_Data" Type="Self.Utilisation_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Utilisation_Data">
+        <PropertyRef Name="Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Utilisation_Data_Veh__Vehicle">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="Utilisation_Data" Type="Self.Utilisation_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Utilisation_Data">
+        <PropertyRef Name="Veh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VTRN_Data_Veh__FROM__Vehicle_Id">
+    <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+    <End Role="VTRN_Data" Type="Self.VTRN_Data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VTRN_Data">
+        <PropertyRef Name="Veh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="prg_dataModelStoreContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientData" EntityType="Self.ClientData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Costing" EntityType="Self.Costing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DRV_Duty" EntityType="Self.DRV_Duty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MAN_Data" EntityType="Self.MAN_Data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilisation_Data" EntityType="Self.Utilisation_Data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VTRN_Data" EntityType="Self.VTRN_Data" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Costing_Veh__FROM__Vehicle_Id" Association="Self.FK__Costing_Veh__FROM__Vehicle_Id">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="Costing" EntitySet="Costing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientData_Client__Client" Association="Self.FK_ClientData_Client__Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientData" EntitySet="ClientData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DRV_Drv__FROM__Drivers_Id" Association="Self.FK_DRV_Drv__FROM__Drivers_Id">
+      <End Role="Drivers" EntitySet="Drivers" />
+      <End Role="DRV_Duty" EntitySet="DRV_Duty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DRV_Duty_Veh" Association="Self.FK_DRV_Duty_Veh">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="DRV_Duty" EntitySet="DRV_Duty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAN_Data_Drv__FROM_Driver_Id" Association="Self.FK_MAN_Data_Drv__FROM_Driver_Id">
+      <End Role="Drivers" EntitySet="Drivers" />
+      <End Role="MAN_Data" EntitySet="MAN_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAN_Data_Veh__FROM__Vehicle_Id" Association="Self.FK_MAN_Data_Veh__FROM__Vehicle_Id">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="MAN_Data" EntitySet="MAN_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Utilisation_Data_Client__Client " Association="Self.FK_Utilisation_Data_Client__Client ">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Utilisation_Data" EntitySet="Utilisation_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Utilisation_Data_Veh__Vehicle" Association="Self.FK_Utilisation_Data_Veh__Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="Utilisation_Data" EntitySet="Utilisation_Data" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VTRN_Data_Veh__FROM__Vehicle_Id" Association="Self.FK_VTRN_Data_Veh__FROM__Vehicle_Id">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="VTRN_Data" EntitySet="VTRN_Data" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

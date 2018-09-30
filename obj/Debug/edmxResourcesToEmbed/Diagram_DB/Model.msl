@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="prg_dataModelStoreContainer" CdmEntityContainer="prg_dataEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="prg_dataModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientDatas">
+      <EntityTypeMapping TypeName="prg_dataModel.ClientData">
+        <MappingFragment StoreEntitySet="ClientData">
+          <ScalarProperty Name="TotalCosts" ColumnName="TotalCosts" />
+          <ScalarProperty Name="ProfitLoss" ColumnName="ProfitLoss" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Costings">
+      <EntityTypeMapping TypeName="prg_dataModel.Costing">
+        <MappingFragment StoreEntitySet="Costing">
+          <ScalarProperty Name="VehCode" ColumnName="VehCode" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Diff_AtTrgt_Fuel_Savings" ColumnName="Diff_AtTrgt_Fuel_Savings" />
+          <ScalarProperty Name="Diff_AtTrgt_Total_FuelCost" ColumnName="Diff_AtTrgt_Total_FuelCost" />
+          <ScalarProperty Name="Diff_AtTrgt_Total_Fuel_Used_Diff_L" ColumnName="Diff_AtTrgt_Total_Fuel_Used_Diff_L" />
+          <ScalarProperty Name="Diff_AtBst_Fuel_Savings" ColumnName="Diff_AtBst_Fuel_Savings" />
+          <ScalarProperty Name="Diff_AtBst_Total_Fuel_Cost" ColumnName="Diff_AtBst_Total_Fuel_Cost" />
+          <ScalarProperty Name="Diff_AtBst_Total_Fuel_Used_Diff_L" ColumnName="Diff_AtBst_Total_Fuel_Used_Diff_L" />
+          <ScalarProperty Name="Diff_AtAv_Fuel_Savings" ColumnName="Diff_AtAv_Fuel_Savings" />
+          <ScalarProperty Name="Diff_AtAv_Total_Fuel_Cosy" ColumnName="Diff_AtAv_Total_Fuel_Cosy" />
+          <ScalarProperty Name="Diff_AtAv_Total_Fuel_Used_Diff_L" ColumnName="Diff_AtAv_Total_Fuel_Used_Diff_L" />
+          <ScalarProperty Name="At_Target_Consumption" ColumnName="At_Target_Consumption" />
+          <ScalarProperty Name="At_Best_Consumption" ColumnName="At_Best_Consumption" />
+          <ScalarProperty Name="At_Average_Consumption" ColumnName="At_Average_Consumption" />
+          <ScalarProperty Name="Current_Consumption" ColumnName="Current_Consumption" />
+          <ScalarProperty Name="Approximate_Addblue_Cost" ColumnName="Approximate_Addblue_Cost" />
+          <ScalarProperty Name="Approximate_Adblue_L" ColumnName="Approximate_Adblue_L" />
+          <ScalarProperty Name="AddBlue_Cost_Per_L" ColumnName="AddBlue_Cost_Per_L" />
+          <ScalarProperty Name="AddBlue_Percentage_Per_L" ColumnName="AddBlue_Percentage_Per_L" />
+          <ScalarProperty Name="Target_Consumption" ColumnName="Target_Consumption" />
+          <ScalarProperty Name="Diesel_Cost_per_l" ColumnName="Diesel_Cost_per_l" />
+          <ScalarProperty Name="Total_Cost_of_running" ColumnName="Total_Cost_of_running" />
+          <ScalarProperty Name="Average_Consumption_MPG" ColumnName="Average_Consumption_MPG" />
+          <ScalarProperty Name="Average_Consumption_Lper100Km" ColumnName="Average_Consumption_Lper100Km" />
+          <ScalarProperty Name="Total_Fuel_Used" ColumnName="Total_Fuel_Used" />
+          <ScalarProperty Name="Total_Distance" ColumnName="Total_Distance" />
+          <ScalarProperty Name="Veh" ColumnName="Veh" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="prg_dataModel.Driver">
+        <MappingFragment StoreEntitySet="Drivers">
+          <ScalarProperty Name="drv_card" ColumnName="drv_card" />
+          <ScalarProperty Name="Standard_Rate" ColumnName="Standard_Rate" />
+          <ScalarProperty Name="Overtime_Rate" ColumnName="Overtime_Rate" />
+          <ScalarProperty Name="Type_Of_Employment" ColumnName="Type_Of_Employment" />
+          <ScalarProperty Name="Surename" ColumnName="Surename" />
+          <ScalarProperty Name="Second_Name" ColumnName="Second_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Employee_Number" ColumnName="Employee_Number" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRV_Duty">
+      <EntityTypeMapping TypeName="prg_dataModel.DRV_Duty">
+        <MappingFragment StoreEntitySet="DRV_Duty">
+          <ScalarProperty Name="C_drivers_Employment_Type" ColumnName="_drivers_Employment_Type" />
+          <ScalarProperty Name="C_drivers_Overtime_Rate" ColumnName="_drivers_Overtime_Rate" />
+          <ScalarProperty Name="C_drivers_Standard_Rate" ColumnName="_drivers_Standard_Rate" />
+          <ScalarProperty Name="DrvName" ColumnName="DrvName" />
+          <ScalarProperty Name="VehCode" ColumnName="VehCode" />
+          <ScalarProperty Name="Co2_Kg" ColumnName="Co2_Kg" />
+          <ScalarProperty Name="MPG" ColumnName="MPG" />
+          <ScalarProperty Name="Total_Km" ColumnName="Total_Km" />
+          <ScalarProperty Name="Duty_Time" ColumnName="Duty_Time" />
+          <ScalarProperty Name="Duty_End" ColumnName="Duty_End" />
+          <ScalarProperty Name="Duty_Start" ColumnName="Duty_Start" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Drv" ColumnName="Drv" />
+          <ScalarProperty Name="Veh" ColumnName="Veh" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAN_Data">
+      <EntityTypeMapping TypeName="prg_dataModel.MAN_Data">
+        <MappingFragment StoreEntitySet="MAN_Data">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Total_Jobs" ColumnName="Total_Jobs" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Manifest_Number" ColumnName="Manifest_Number" />
+          <ScalarProperty Name="Drv" ColumnName="Drv" />
+          <ScalarProperty Name="Veh" ColumnName="Veh" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilisation_Data">
+      <EntityTypeMapping TypeName="prg_dataModel.Utilisation_Data">
+        <MappingFragment StoreEntitySet="Utilisation_Data">
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="Veh" ColumnName="Veh" />
+          <ScalarProperty Name="Man_Total_Revenue" ColumnName="Man_Total_Revenue" />
+          <ScalarProperty Name="Bkg_Cons_Price" ColumnName="Bkg_Cons_Price" />
+          <ScalarProperty Name="Bkg_Cons_Weight" ColumnName="Bkg_Cons_Weight" />
+          <ScalarProperty Name="Bkg_Cons_Packs" ColumnName="Bkg_Cons_Packs" />
+          <ScalarProperty Name="Bkg_Customer_Code" ColumnName="Bkg_Customer_Code" />
+          <ScalarProperty Name="Bkg_Number" ColumnName="Bkg_Number" />
+          <ScalarProperty Name="Man_Veh_Code" ColumnName="Man_Veh_Code" />
+          <ScalarProperty Name="Man_Total_Jobs" ColumnName="Man_Total_Jobs" />
+          <ScalarProperty Name="Man_Total_Packs" ColumnName="Man_Total_Packs" />
+          <ScalarProperty Name="Man_Number" ColumnName="Man_Number" />
+          <ScalarProperty Name="Man_Date_Drv" ColumnName="Man_Date_Drv" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="prg_dataModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VTRN_Data">
+      <EntityTypeMapping TypeName="prg_dataModel.VTRN_Data">
+        <MappingFragment StoreEntitySet="VTRN_Data">
+          <ScalarProperty Name="Vtrn_Veh_Code" ColumnName="Vtrn_Veh_Code" />
+          <ScalarProperty Name="Vtrn_Date_Driver" ColumnName="Vtrn_Date_Driver" />
+          <ScalarProperty Name="Vtrn_Monies" ColumnName="Vtrn_Monies" />
+          <ScalarProperty Name="Veh" ColumnName="Veh" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
